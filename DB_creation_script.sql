@@ -150,3 +150,24 @@ INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020,
 INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 36, 30);
 INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 37, 15);
 INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 38, 0);
+
+CREATE TABLE IF NOT EXISTS Budget (
+  CategoryID INT UNSIGNED NOT NULL PRIMARY KEY,
+  `Limit` DECIMAL(8,2) NOT NULL,
+  
+  CONSTRAINT fk_CategoriesBudget
+    FOREIGN KEY (CategoryID) REFERENCES Categories (ID)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+    );
+  
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (1, 340);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (2, 280);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (3, 210);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (4, 50);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (5, 120);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (6, 30);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (7, 50);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (8, 50);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (9, 40);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (10, 30);
+
