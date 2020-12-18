@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS Expenses (
   SubCategoryID INT UNSIGNED NOT NULL,
   AmountSpent DECIMAL(8,2) NOT NULL);
   
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (`Year`, `Month`, SubCategoryID, AmountSpent);
+  
 INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 1, 50);
 INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 2, 0);
 INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 3, 45);
