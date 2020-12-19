@@ -71,8 +71,13 @@ CREATE TABLE IF NOT EXISTS Expenses (
   ID INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
   `Year` INT UNSIGNED NOT NULL,
   `Month` INT UNSIGNED NOT NULL,
+  CategoryID INT UNSIGNED NOT NULL,
   SubCategoryID INT UNSIGNED NOT NULL,
   AmountSpent DECIMAL(8,2) NOT NULL,
+  
+  CONSTRAINT fk_ExpensesCategories
+    FOREIGN KEY (CategoryID) REFERENCES Categories (ID)
+    ON DELETE RESTRICT ON UPDATE CASCADE,
   
   CONSTRAINT fk_SubCategories
     FOREIGN KEY (SubCategoryID) REFERENCES SubCategories (ID)
@@ -80,82 +85,83 @@ CREATE TABLE IF NOT EXISTS Expenses (
     );
   
   
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 1, 50);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 2, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 3, 45);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 4, 23);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 5, 15);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 6, 10);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 7, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 8, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 9, 140);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 10, 123);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 11, 34);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 12, 90);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 13, 200);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 14, 35);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 15, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 16, 13);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 17, 55);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 18, 150);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 19, 15);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 20, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 21, 30);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 22, 15);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 23, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 24, 16);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 25, 50);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 26, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 27, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 28, 150);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 29, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 30, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 31, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 32, 20);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 33, 20);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 34, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 35, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 36, 30);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 37, 20);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 10, 38, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 1, 80);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 2, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 3, 30);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 4, 15);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 5, 12);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 6, 10);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 7, 25);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 8, 4);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 9, 170);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 10, 60);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 11, 25);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 12, 85);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 13, 200);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 14, 26);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 15, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 16, 25);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 17, 45);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 18, 150);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 19, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 20, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 21, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 22, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 23, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 24, 12);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 25, 50);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 26, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 27, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 28, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 29, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 30, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 31, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 32, 20);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 33, 20);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 34, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 35, 0);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 36, 30);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 37, 15);
-INSERT INTO Expenses (`Year`, `Month`, SubCategoryID, AmountSpent) VALUES (2020, 11, 38, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 1, 1, 50);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 1, 2, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 1, 3, 45);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 1, 4, 23);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 1, 5, 15);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 2, 6, 10);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 2, 7, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 2, 8, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 3, 9, 140);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 3, 10, 123);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 3, 11, 34);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 4, 12, 90);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 4, 13, 200);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 4, 14, 35);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 4, 15, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 4, 16, 13);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 5, 17, 55);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 5, 18, 150);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 5, 19, 15);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 5, 20, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 6, 21, 30);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 6, 22, 15);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 6, 23, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 6, 24, 16);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 7, 25, 50);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 7, 26, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 7, 27, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 8, 28, 150);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 8, 29, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 8, 30, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 8, 31, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 9, 32, 20);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 9, 33, 20);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 9, 34, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 9, 35, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 10, 36, 30);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 10, 37, 20);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 10, 10, 38, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 1, 1, 80);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 1, 2, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 1, 3, 30);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 1, 4, 15);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 1, 5, 12);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 2, 6, 10);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 2, 7, 25);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 2, 8, 4);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 3, 9, 170);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 3, 10, 60);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 3, 11, 25);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 4, 12, 85);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 4, 13, 200);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 4, 14, 26);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 4, 15, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 4, 16, 25);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 5, 17, 45);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 5, 18, 150);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 5, 19, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 5, 20, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 6, 21, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 6, 22, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 6, 23, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 6, 24, 12);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 7, 25, 50);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 7, 26, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 7, 27, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 8, 28, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 8, 29, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 8, 30, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 8, 31, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 9, 32, 20);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 9, 33, 20);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 9, 34, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 9, 35, 0);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 10, 36, 30);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 10, 37, 15);
+INSERT INTO Expenses (`Year`, `Month`, CategoryID, SubCategoryID, AmountSpent) VALUES (2020, 11, 10, 38, 0);
+
 
 CREATE TABLE IF NOT EXISTS Budget (
   ID INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
