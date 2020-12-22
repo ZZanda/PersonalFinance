@@ -173,14 +173,13 @@ CREATE TABLE IF NOT EXISTS Budget (
     ON DELETE RESTRICT ON UPDATE CASCADE
     );
   
-INSERT INTO Budget (CategoryID, `Limit`) VALUES (1, 340);
-INSERT INTO Budget (CategoryID, `Limit`) VALUES (2, 280);
-INSERT INTO Budget (CategoryID, `Limit`) VALUES (3, 210);
-INSERT INTO Budget (CategoryID, `Limit`) VALUES (4, 50);
-INSERT INTO Budget (CategoryID, `Limit`) VALUES (5, 120);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (1, 120);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (2, 30);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (3, 280);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (4, 340);
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (5, 210);
 INSERT INTO Budget (CategoryID, `Limit`) VALUES (6, 30);
 INSERT INTO Budget (CategoryID, `Limit`) VALUES (7, 50);
 INSERT INTO Budget (CategoryID, `Limit`) VALUES (8, 50);
 INSERT INTO Budget (CategoryID, `Limit`) VALUES (9, 40);
-INSERT INTO Budget (CategoryID, `Limit`) VALUES (10, 30);
-
+INSERT INTO Budget (CategoryID, `Limit`) VALUES (10, 50);
