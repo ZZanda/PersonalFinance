@@ -6,7 +6,7 @@ import java.util.*;
 public class pftool_main {
 
     public static void main(String[] args) throws Exception {
-        String connectionString = "jdbc:mysql://localhost/pftool?user=java&password=Testing12";
+        String connectionString = "jdbc:mysql://localhost/pftool?user=test&password=test";
         Connection conn = DriverManager.getConnection(connectionString);
 
         Statement statement = conn.createStatement();
