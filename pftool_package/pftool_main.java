@@ -360,14 +360,14 @@ public class pftool_main {
                                 " FROM expenses" +
                                 " JOIN categories on categories.ID = expenses.CategoryID" +
                                 " JOIN subcategories on subcategories.ID = expenses.CategoryID" +
-                                (c1 == 0 && sb1 == 0 && y1 == 0 && m1 == 0 ? "" : (" WHERE ")) +
-                                (c1 == 0 ? "" : (" EXPENSES.CategoryID = '" + c1 + "'")) +
-                                (c1 == 0 || sb1 == 0 ? "" : (" and")) +
-                                (sb1 == 0 ? "" : (" EXPENSES.SubCategoryID = '" + sb1 + "'")) +
-                                (sb1 == 0 || y1 == 0 ? "" : (" and")) +
+                                (y1 == 0 && m1 == 0 && c1 == 0 && sb1 == 0 ? "" : (" WHERE ")) +
                                 (y1 == 0 ? "" : (" Year='" + y1 + "'")) +
-                                (y1 == 0 || m1 == 0 ? "" : (" and")) +
+                                (y1 != 0 && (m1 != 0 || c1 != 0 || sb1 != 0) ? " and" : ("")) +
                                 (m1 == 0 ? "" : (" Month='" + m1 + "'")) +
+                                (m1 != 0 && (c1 != 0 || sb1 != 0) ? " and" : ("")) +
+                                (c1 == 0 ? "" : (" EXPENSES.CategoryID = '" + c1 + "'")) +
+                                (c1 != 0 && sb1 != 0 ? " and" : ("")) +
+                                (sb1 == 0 ? "" : (" EXPENSES.SubCategoryID = '" + sb1 + "'")) +
                                 " ORDER BY ID");
 
                         if (!resultSet.isBeforeFirst()) {
